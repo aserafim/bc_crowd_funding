@@ -63,4 +63,32 @@ contract CrowdFunding{
         // zera a contribuição para impedir ataques
         contributors[msg.sender] = 0;
     }
+
+    modifier onlyAdmin(){
+        require(msg.sender == admin, "Only admin can call this function!");
+        _;
+    }
+
+    function createRequest(string memory _description, address payable _recipient, uint _value) public onlyAdmin{
+        Request storage newRequest = requests[numRequests];
+        numRequests++;
+
+        newRequest.description = _description;
+        newRequest.recipient = _recipient;
+        newRequest.value = _value;
+        newRequest.completed = false;
+        newRequest.noOfVoters = 0;
+    }
+
+    // uma vez contribuindo, cada um
+    // poderá votar para qual causa
+    // o valor será utilizado
+    function voteRequest(uint _requestNo) public{
+        require(contributors[msg.sender] > 0, "You must to be a contributor to vote!");
+        Request storage thisRequest = requests[_requestNo];
+
+        require(thisRequest.voters[msg.sender] == false, "You have already voted!");
+        thisRequest.voters[msg.sender] = true;
+        thisRequest.noOfVoters++;
+    }
 }

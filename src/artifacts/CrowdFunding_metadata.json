@@ -61,6 +61,29 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_description",
+						"type": "string"
+					},
+					{
+						"internalType": "address payable",
+						"name": "_recipient",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_value",
+						"type": "uint256"
+					}
+				],
+				"name": "createRequest",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "deadline",
 				"outputs": [
@@ -198,6 +221,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_requestNo",
+						"type": "uint256"
+					}
+				],
+				"name": "voteRequest",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"stateMutability": "payable",
 				"type": "receive"
 			}
@@ -230,11 +266,11 @@
 	},
 	"sources": {
 		"src/crowdfunding.sol": {
-			"keccak256": "0x87f92beff00f55b56d8d78fd1f167b33832a7a817f4aad353e8e506cf5ad80c3",
+			"keccak256": "0x18787c5766ac4d7169782421af7034155a89975876aa674e28a3f225295f9d71",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://5cdd08f0a89a1a924c5fd912ed99e2cf7d6522da2398325a5a68af3fbfe06d98",
-				"dweb:/ipfs/QmeWUMpDoBFgckwWMkNkr5ZizrFDcb6qoZvX18KvRqyRae"
+				"bzz-raw://578bf3e8f7b48c224fc7bee29a443f558946cc490378e862a302cba791dc7e39",
+				"dweb:/ipfs/Qma3VMNNtXNhJrsMpn7DPy1K3nv7vV4NRHMPdoLciRXxQF"
 			]
 		}
 	},
