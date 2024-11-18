@@ -27,4 +27,28 @@ contract CrowdFunding{
         contributors[msg.sender] += msg.value;
         raisedAmount += msg.value;
     }
+
+    receive() payable external {
+        contribute();
+    }
+
+    function getBalance() public view returns(uint){
+        return address(this).balance;
+    }
+
+    // caso a campanha não atinja seu objetivo
+    // é possível pedir o seu dinheiro de volta
+    function getRefund() public{
+        // exige que a campanha não tenha sido bem sucedida
+        require(block.timestamp > deadline && raisedAmount < goal);
+        // somente alguém que contribuiu pode solicitar o reembolso
+        require(contributors[msg.sender] > 0);
+
+        address payable recipient = payable(msg.sender);
+        uint value = contributors[msg.sender];
+        recipient.transfer(value);
+
+        // zera a contribuição para impedir ataques
+        contributors[msg.sender] = 0;
+    }
 }
