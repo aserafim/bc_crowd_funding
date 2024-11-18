@@ -134,11 +134,63 @@
 			},
 			{
 				"inputs": [],
+				"name": "numRequests",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "raisedAmount",
 				"outputs": [
 					{
 						"internalType": "uint256",
 						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "requests",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					},
+					{
+						"internalType": "address payable",
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "completed",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "noOfVoters",
 						"type": "uint256"
 					}
 				],
@@ -178,11 +230,11 @@
 	},
 	"sources": {
 		"src/crowdfunding.sol": {
-			"keccak256": "0xab35890cdc6dcf8535928afc181602be1a2f639779ec664d69661ba9a6ff0100",
+			"keccak256": "0x87f92beff00f55b56d8d78fd1f167b33832a7a817f4aad353e8e506cf5ad80c3",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://097eee248c871623d2f58bea0aabda31a5cac56e3efcc39c5221acd8d0d6f65e",
-				"dweb:/ipfs/QmdkZjJYNMR4X4y8NZ2R5ewnfdjJb9e7dz9teScnCxEb2Z"
+				"bzz-raw://5cdd08f0a89a1a924c5fd912ed99e2cf7d6522da2398325a5a68af3fbfe06d98",
+				"dweb:/ipfs/QmeWUMpDoBFgckwWMkNkr5ZizrFDcb6qoZvX18KvRqyRae"
 			]
 		}
 	},

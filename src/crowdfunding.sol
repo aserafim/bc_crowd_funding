@@ -9,6 +9,18 @@ contract CrowdFunding{
     uint public deadline; // timestamp
     uint public goal;
     uint public raisedAmount;
+    struct Request{
+        string description;
+        address payable recipient;
+        uint value;
+        bool completed;
+        uint noOfVoters;
+        mapping(address => bool) voters;
+    }
+
+    mapping(uint => Request) public requests;
+    // necessário porque mapping não indexa automaticamente
+    uint public numRequests;
 
     constructor(uint _goal, uint _deadline){
         goal = _goal;
