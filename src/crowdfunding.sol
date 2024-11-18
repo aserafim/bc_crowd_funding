@@ -18,6 +18,11 @@ contract CrowdFunding{
         mapping(address => bool) voters;
     }
 
+    // eventos necessários para criação de logs
+    event ContributeEvent(address _sender, uint _value);
+    event CreateRequestEvent(string _description,address _recipient,uint _value);
+    event MakePaymentRequest(address _recipient, uint _value);
+
     mapping(uint => Request) public requests;
     // necessário porque mapping não indexa automaticamente
     uint public numRequests;
@@ -38,6 +43,8 @@ contract CrowdFunding{
         }
         contributors[msg.sender] += msg.value;
         raisedAmount += msg.value;
+
+        emit ContributeEvent(msg.sender, msg.value);
     }
 
     receive() payable external {
@@ -78,6 +85,8 @@ contract CrowdFunding{
         newRequest.value = _value;
         newRequest.completed = false;
         newRequest.noOfVoters = 0;
+
+        emit CreateRequestEvent(_description, _recipient, _value);
     }
 
     // uma vez contribuindo, cada um
@@ -100,5 +109,7 @@ contract CrowdFunding{
 
         thisRequest.recipient.transfer(thisRequest.value);
         thisRequest.completed = true;
+
+        emit MakePaymentRequest(thisRequest.recipient, thisRequest.value);
     }
 }

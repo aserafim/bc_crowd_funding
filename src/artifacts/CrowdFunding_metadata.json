@@ -22,6 +22,69 @@
 				"type": "constructor"
 			},
 			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_sender",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_value",
+						"type": "uint256"
+					}
+				],
+				"name": "ContributeEvent",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "_description",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_recipient",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_value",
+						"type": "uint256"
+					}
+				],
+				"name": "CreateRequestEvent",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_recipient",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_value",
+						"type": "uint256"
+					}
+				],
+				"name": "MakePaymentRequest",
+				"type": "event"
+			},
+			{
 				"inputs": [],
 				"name": "admin",
 				"outputs": [
@@ -279,11 +342,11 @@
 	},
 	"sources": {
 		"src/crowdfunding.sol": {
-			"keccak256": "0xa0518d5491de1de4a1268b8d71de2ee0642f92f960f80759895623be1af2686f",
+			"keccak256": "0x69baf9f1875ccfa7c6a2441b1427d9b3c10d3f5ec117757ff82f7188e3afc366",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://2ae4b0cd7ba232f7367f227dc4f3b3972120993f07a4e3b3ef459227b4d77a41",
-				"dweb:/ipfs/QmZ7duNQMjSia3k4VnwhJ1FpDV8NBYzWC3azu81T6cfsM8"
+				"bzz-raw://8097c69b104c73004e347e142c3391d9c63666c688194be52f7f79a21d882284",
+				"dweb:/ipfs/QmTsq7PA2LgSDkKmJueFkVRtHva1PWwChQWD784Cm2LGsp"
 			]
 		}
 	},
